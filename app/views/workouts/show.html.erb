@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Workout:</strong>
+  <%= @workout.workout %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @workout.summary %>
+</p>
+
+<p>
+  <strong>Reviews count:</strong>
+  <%= @workout.reviews_count %>
+</p>
+
+
+<%= link_to 'Review', new_review_path %>|
+<%= link_to 'Edit', edit_workout_path(@workout) %> |
+<%= link_to 'Back', workouts_path %>
