@@ -16,6 +16,13 @@
 </p>
 
 
-<%= link_to 'Review', new_review_path %>|
-<%= link_to 'Edit', edit_workout_path(@workout) %> |
-<%= link_to 'Back', workouts_path %>
+
+ 
+<%= link_to 'Back', workouts_path %> |
+<%= link_to 'Edit', edit_workout_path(@workout) %>
+
+<% if current_user %>
+<%= render"shared/form"%>
+<%else%>
+<%= link_to'Please Sign in or sign-up to review',new_user_session_path(@devise) %>
+<% end %>

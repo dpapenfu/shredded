@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_04_015444) do
+ActiveRecord::Schema.define(version: 2023_03_05_164202) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "star_rating"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2023_03_04_015444) do
     t.integer "workout_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "review_count"
   end
 
   create_table "users", force: :cascade do |t|

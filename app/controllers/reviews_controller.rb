@@ -21,7 +21,10 @@ class ReviewsController < ApplicationController
 
   # POST /reviews or /reviews.json
   def create
+   
+    
     @review = Review.new(review_params)
+    
 
     respond_to do |format|
       if @review.save
@@ -65,6 +68,7 @@ class ReviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:star_rating, :comment, :user_id, :workout_id)
+      params.require(:review).permit(:star_rating, :comment, :user_id, :workout_id )
+      
     end
 end

@@ -1,0 +1,25 @@
+Review this workout
+
+<%= form_with do |form| %>
+  <div class="field">
+    <%= form.label :star_rating %>
+    <%= form.number_field :star_rating, max:5, min:0 %>
+  </div>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :workout_id, value: @workout.id %>
+    
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Save review', @review, method: "post" %>
+  </div>
+<% end %>

@@ -2,7 +2,7 @@
   <% if review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
+            
       <ul>
         <% review.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -22,12 +22,12 @@
   </div>
 
   <div class="field">
-    <%= form.hidden_field current_user.id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
-    <%= form.label :workout_id %>
-    <%= form.number_field :workout_id %>
+    <%= form.hidden_field :workout_id, value: 1 %>
+    
   </div>
 
   <div class="actions">
