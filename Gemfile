@@ -14,6 +14,8 @@ gem 'sprockets', '< 4'
 gem 'sassc-rails'
 gem 'faker'
 gem 'devise'
+gem 'jquery-rails'
+gem 'turbolinks', '~> 5'
 
 group :development do
   gem 'annotate'
