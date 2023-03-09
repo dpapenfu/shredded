@@ -18,8 +18,8 @@
       <tr>
         <td><%= review.star_rating %></td>
         <td><%= review.comment %></td>
-        <td><%= review.user_id %></td>
-        <td><%= review.workout_id %></td>
+        <td><%= review.user.username %></td>
+        <td><%= review.workout.workout %></td>
         <td><%= link_to 'Show', review %></td>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
         <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,5 +29,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Review', new_review_path %>

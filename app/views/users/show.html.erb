@@ -1,0 +1,8 @@
+<h1> <%= @user.username%></h1>
+
+    <%= render "shared/tabs" %>
+
+  <%= current_user.workouts.count%>
+  <% current_user.reviews.each do |review|%>
+  <%= render "photos/photo", photo: photo %>
+  <% end %>

@@ -8,6 +8,19 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1 or /reviews/1.json
   def show
+    review_nr = params.fetch("id")
+    a = Review.where({:id=>review_nr}).first
+    b = a.user_id
+    c = User.where({:id=>b}).first
+    @reviewer = c.username
+       
+    t = a.workout_id
+    u = Workout.where({:id=>t}).first
+    
+    @workout = u.workout
+    
+  
+   
   end
 
   # GET /reviews/new
@@ -66,9 +79,13 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
+    def creation_params
+      params.permit(:review)
+      end
+
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:star_rating, :comment, :user_id, :workout_id )
+      params.permit(:star_rating, :comment, :user_id, :workout_id )
       
     end
 end

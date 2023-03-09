@@ -23,6 +23,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+    validates :email, uniqueness: true
+    validates :username, uniqueness: true
+
          has_many(:reviews, { :class_name => "Review", :foreign_key => "user_id", :dependent => :destroy })
          has_many(:workouts, { :through => :reviews, :source => :workout })
 end

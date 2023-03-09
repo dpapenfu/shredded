@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :reviews
   resources :workouts
   
-  
+  get"/users/:username" => "users#show", as: :user
       
 end

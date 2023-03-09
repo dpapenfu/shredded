@@ -8,6 +8,9 @@ class WorkoutsController < ApplicationController
 
   # GET /workouts/1 or /workouts/1.json
   def show
+    review_nr = params.fetch("id")
+    @workout_reviews = Review.where({:workout_id=>review_nr})
+
   end
 
   # GET /workouts/new
@@ -65,6 +68,6 @@ class WorkoutsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def workout_params
-      params.require(:workout).permit(:workout, :summary, :reviews_count)
+      params.require(:workout).permit(:workout, :summary)
     end
 end

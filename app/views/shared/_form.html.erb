@@ -1,6 +1,6 @@
-Review this workout
+<h1>Review this workout</h1>
 
-<%= form_with do |form| %>
+<%= form_with model: @review, url: reviews_path  do |form| %>
   <div class="field">
     <%= form.label :star_rating %>
     <%= form.number_field :star_rating, max:5, min:0 %>
@@ -20,6 +20,6 @@ Review this workout
   </div>
 
   <div class="actions">
-    <%= link_to 'Save review', @review, method: "post" %>
+    <%= form.submit %>
   </div>
 <% end %>
