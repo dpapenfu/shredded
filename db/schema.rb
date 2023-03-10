@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_10_144103) do
+ActiveRecord::Schema.define(version: 2023_03_10_172217) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "star_rating"

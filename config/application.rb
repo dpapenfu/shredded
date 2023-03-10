@@ -31,7 +31,8 @@ module FinalProject
       g.javascripts     false
       g.helper          false
     end
-    
+    config.middleware.use ActionDispatch::Cookies    
+    config.middleware.use ActionDispatch::Session::CookieStore
     config.action_controller.default_protect_from_forgery = false
     config.active_record.belongs_to_required_by_default = false
 
@@ -39,7 +40,7 @@ module FinalProject
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-
+    config.api_only = false
     # Don't generate system test files.
     config.generators.system_tests = nil
 
