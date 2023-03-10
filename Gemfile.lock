@@ -398,6 +398,7 @@ DEPENDENCIES
   rspec-rails
   rufo
   sassc-rails
+  simple_form
   simple_token_authentication (~> 1.0)
   spring
   spring-watcher-listen (~> 2.0.0)

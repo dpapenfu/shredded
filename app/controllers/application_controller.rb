@@ -4,12 +4,20 @@ class ApplicationController < ActionController::Base
       if: ->(controller) { controller.user_token_authenticable? }
     respond_to :html, :json
     protect_from_forgery with: :null_session, if: :json_request?
+    
     before_action :authenticate_user_from_token!, if: :json_request?
     before_action :authenticate_user!, unless: :json_request?
   
     before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action (:load_current_user)
   
+    def load_current_user
+      the_id = session[:user_id]
+      
+      @current_user = User.where({ :id => the_id }).first
   
+    end
+
     protected
   
     def user_token_authenticable?
