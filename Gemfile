@@ -16,6 +16,8 @@ gem 'faker'
 gem 'devise'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'simple_token_authentication', '~> 1.0'
 
 group :development do
   gem 'annotate'

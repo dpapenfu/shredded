@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user_workouts = Review.where(:user_id=>@user.id) 
 
   end
-end
+
 
 
 private
